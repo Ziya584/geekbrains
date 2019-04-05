@@ -4,7 +4,7 @@ $h1 = "minimalistica";
 $currentDate = date("Y-m-d H:i:s");
 
 $url="#";
-$li=['home','']
+$li=['home','archive','contact'];
 
 ?>
 
