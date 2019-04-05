@@ -2,6 +2,10 @@
 $title = "minimalistica";
 $h1 = "minimalistica";
 $currentDate = date("Y-m-d H:i:s");
+
+$url="#";
+$li=['home','']
+
 ?>
 
 
@@ -18,9 +22,9 @@ $currentDate = date("Y-m-d H:i:s");
 	<h1><?=$h1?></h1>
 
 	<ul id="menu">
-		<li><a href="#">home</a></li>
-		<li><a href="#">archive</a></li>
-		<li><a href="#">contact</a></li>
+		<?php foreach ($li as $key => $li){?>
+		<li><a href="<?=$url;?>"><?=$li?></a></li>
+		<?php } ?>
 	</ul>
 
 	<div class="post">
