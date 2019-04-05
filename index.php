@@ -22,8 +22,8 @@ $li=['home','archive','contact'];
 	<h1><?=$h1?></h1>
 
 	<ul id="menu">
-		<?php foreach ($li as $key => $li){?>
-		<li><a href="<?=$url;?>"><?=$li?></a></li>
+		<?php foreach ($li as $k => $menyu){?>
+		<li><a href="<?=$url;?>"><?=$menyu?></a></li>
 		<?php } ?>
 	</ul>
 
