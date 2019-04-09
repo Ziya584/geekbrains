@@ -8,7 +8,7 @@
 				//записываем название в переменную name
 				$name = basename($_FILES["photo"]["name"]);
 				// загружаем фото в папку пик
-				 move_uploaded_file($_FILES['photo']['tmp_name'], "pic/big/$name");
+				move_uploaded_file($_FILES['photo']['tmp_name'], "pic/big/$name");
 				return "pic/big/$name";
 			}else{
 				return FALSE;

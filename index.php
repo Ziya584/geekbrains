@@ -26,7 +26,7 @@
 	</div>
 	<div class="row">
 		<div class="gallery">
-		<?php
+			<?php
 				if(isset($_FILES['photo'])&&!empty($_FILES['photo'])){
 					$pics = ImageRedakt::save();
 					ImageRedakt::convert($pics);
@@ -40,7 +40,7 @@
 					<a href=<?="pic/big/".$pic;?> target='_blank'> <img src="<?="pic/small/".$pic;?>"</a>
 					<?php
 				}
-		?>
+			?>
 		</div>
 	</div>
 </div>
