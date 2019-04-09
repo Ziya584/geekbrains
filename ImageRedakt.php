@@ -42,6 +42,7 @@
 			return $dst;
 		}
 
+		//меняет размер
 		public static function convert($filepath){
 			$path = explode('/',$filepath);
 			$name=$path[count($path)-1];

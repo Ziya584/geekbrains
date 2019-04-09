@@ -38,7 +38,6 @@
 					if(strlen($pic)<4){ continue;}
 					?>
 					<a href=<?="pic/big/".$pic;?> target='_blank'> <img src="<?="pic/small/".$pic;?>"</a>
-
 					<?php
 				}
 		?>
