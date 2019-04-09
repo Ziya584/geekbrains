@@ -1,63 +1,61 @@
 <?php
-$title = "minimalistica";
-$h1 = "minimalistica";
-$currentDate = date("Y-m-d H:i:s");
-
-$url="#";
-$li=['home','archive','contact'];
-
+	include_once("ImageRedakt.php");
 ?>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
-	<link rel="stylesheet" href="css/main.css" type="text/css" />
-	<title><?=$title?></title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<title>Homework</title>
 </head>
 <body>
-<div id="content">
-	<h1><?=$h1?></h1>
+<div class="container">
+	<h1> Add your photo to the Gallery! :) </h1>
+	<div class="row">
+		<form action="#" method="post" enctype="multipart/form-data">
+			<input type="file" name="photo" accept="image/*">
+			<input type="submit" value="download">
+		</form>
+	</div>
+	<div class="row">
+		<div class="gallery">
+		<?php
+				if(isset($_FILES['photo'])&&!empty($_FILES['photo'])){
+					$pics = ImageRedakt::save();
+					ImageRedakt::convert($pics);
+				}
 
-	<ul id="menu">
-		<?php foreach ($li as $k => $menyu){?>
-		<li><a href="<?=$url;?>"><?=$menyu?></a></li>
-		<?php } ?>
-	</ul>
+				$res = scandir("pic/small/");
+				var_dump($res);
+				foreach ($res as $pic){
+					if(strlen($pic)<4){ continue;}
+					?>
+					<a href=<?="pic/big/".$pic;?> target='_blank'> <img src="<?="pic/small/".$pic;?>"</a>
 
-	<div class="post">
-		<div class="details">
-			<h2><a href="#">Nunc commodo euismod massa quis vestibulum</a></h2>
-			<p class="info"><?=$currentDate?> <a href="#">general</a></p>
-
+					<?php
+				}
+		?>
 		</div>
-		<div class="body">
-			<p>Nunc eget nunc libero. Nunc commodo euismod massa quis vestibulum. Proin mi nibh, dignissim a pellentesque at, ultricies sit amet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel lorem eu libero laoreet facilisis. Aenean placerat, ligula quis placerat iaculis, mi magna luctus nibh, adipiscing pretium erat neque vitae augue. Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at ipsum.</p>
-		</div>
-		<div class="x"></div>
-	</div>
-
-	<div class="col">
-		<h3><a href="#">Ut enim risus rhoncus</a></h3>
-		<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>
-		<p>&not; <a href="#">read more</a></p>
-	</div>
-	<div class="col">
-		<h3><a href="#">Maecenas iaculis leo</a></h3>
-		<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>
-		<p>&not; <a href="#">read more</a></p>
-	</div>
-	<div class="col last">
-		<h3><a href="#">Quisque consectetur odio</a></h3>
-		<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>
-		<p>&not; <a href="#">read more</a></p>
-	</div>
-
-	<div id="footer">
-		<p>Copyright &copy; <em>minimalistica</em> &middot; Design: Luka Cvrk, <a href="http://www.solucija.com/" title="Free CSS Templates">Solucija</a></p>
 	</div>
 </div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
 </body>
 </html>
