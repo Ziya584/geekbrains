@@ -33,7 +33,6 @@
 				}
 
 				$res = scandir("pic/small/");
-				var_dump($res);
 				foreach ($res as $pic){
 					if(strlen($pic)<4){ continue;}
 					?>
