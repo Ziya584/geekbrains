@@ -50,11 +50,11 @@
 			switch ($type[1]){
 				case 'jpg':
 					$res = ImageRedakt::resize_imagejpg($filepath,100, 100);
-					imagejpeg($res,"pic/samll/".$name);
+					imagejpeg($res,"pic/small/".$name);
 					break;
 				case 'jpeg':
 					$res = ImageRedakt::resize_imagejpg($filepath,100, 100);
-					imagejpeg($res,"pic/samll/".$name);
+					imagejpeg($res,"pic/small/".$name);
 					break;
 				case 'png':
 					$res = ImageRedakt::resize_imagepng($filepath,100, 100);
@@ -62,7 +62,7 @@
 					break;
 				case 'gif':
 					$res = ImageRedakt::resize_imagegif($filepath,100, 100);
-					imagejpeg($res,"pic/samll/".$name);
+					imagejpeg($res,"pic/small/".$name);
 					break;
 			}
 		}
