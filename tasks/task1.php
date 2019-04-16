@@ -124,7 +124,7 @@
 
 	echo "<br> *************** TASK 5 *************** <br><br>";
 
-	echo "<a href='index.php' target='_blank'> Вот тут мы его уже выполнили </a> <br>";
+	echo "<a href='../index.php' target='_blank'> Вот тут мы его уже выполнили </a> <br>";
 
 	echo "<br> *************** TASK 6 *************** <br><br>";
 

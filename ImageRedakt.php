@@ -8,7 +8,7 @@
 				//записываем название в переменную name
 				$name = basename($_FILES["photo"]["name"]);
 				// загружаем фото в папку пик
-				 move_uploaded_file($_FILES['photo']['tmp_name'], "pic/big/$name");
+				move_uploaded_file($_FILES['photo']['tmp_name'], "pic/big/$name");
 				return "pic/big/$name";
 			}else{
 				return FALSE;
@@ -42,18 +42,20 @@
 			return $dst;
 		}
 
-		public static function convert($filepath){
+		//меняет размер
+		public static function convert($filepath, $type){
+
 			$path = explode('/',$filepath);
 			$name=$path[count($path)-1];
-			$type=explode('.',$name);
+			$type=explode('/', $type);
 			switch ($type[1]){
 				case 'jpg':
 					$res = ImageRedakt::resize_imagejpg($filepath,100, 100);
-					imagejpeg($res,"pic/samll/".$name);
+					imagejpeg($res,"pic/small/".$name);
 					break;
 				case 'jpeg':
 					$res = ImageRedakt::resize_imagejpg($filepath,100, 100);
-					imagejpeg($res,"pic/samll/".$name);
+					imagejpeg($res,"pic/small/".$name);
 					break;
 				case 'png':
 					$res = ImageRedakt::resize_imagepng($filepath,100, 100);
@@ -61,7 +63,7 @@
 					break;
 				case 'gif':
 					$res = ImageRedakt::resize_imagegif($filepath,100, 100);
-					imagejpeg($res,"pic/samll/".$name);
+					imagejpeg($res,"pic/small/".$name);
 					break;
 			}
 		}
