@@ -36,12 +36,11 @@
 					$pics = ImageRedakt::save();
 					ImageRedakt::convert($pics,$_FILES['photo']['type']);
 				}
-
-				$res = scandir("pic/small/");
-				foreach ($res as $pic){
-					if(strlen($pic)<4){ continue;}
+				$data = DB::getAll('pics','id');
+				foreach ($data as $key => $value){
+					if(strlen($data[$key][1])<4){ continue;}
 					?>
-					<a href=<?="pic/big/".$pic;?> target='_blank'> <img src="<?="pic/small/".$pic;?>"</a>
+					<a href=<?=$data[$key][2]?> target='_blank'> <img src="<?=$data[$key][3];?>"</a>
 					<?php
 				}
 			?>
