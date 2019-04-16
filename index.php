@@ -1,5 +1,6 @@
 <?php
 	include_once("ImageRedakt.php");
+
 ?>
 
 <!doctype html>
@@ -25,11 +26,15 @@
 		</form>
 	</div>
 	<div class="row">
+		<br>
+		<br>
+	</div>
+	<div class="row">
 		<div class="gallery">
 			<?php
 				if(isset($_FILES['photo'])&&!empty($_FILES['photo'])){
 					$pics = ImageRedakt::save();
-					ImageRedakt::convert($pics);
+					ImageRedakt::convert($pics,$_FILES['photo']['type']);
 				}
 
 				$res = scandir("pic/small/");

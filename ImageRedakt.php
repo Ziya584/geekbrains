@@ -43,10 +43,11 @@
 		}
 
 		//меняет размер
-		public static function convert($filepath){
+		public static function convert($filepath, $type){
+
 			$path = explode('/',$filepath);
 			$name=$path[count($path)-1];
-			$type=explode('.',$name);
+			$type=explode('/', $type);
 			switch ($type[1]){
 				case 'jpg':
 					$res = ImageRedakt::resize_imagejpg($filepath,100, 100);
