@@ -20,8 +20,13 @@
 		public static function getById($tablename, $id){
 			$sql = "SELECT * FROM ".$tablename." WHERE id=".$id;
 			$conn = DB::connection();
-			$res = mysqli_fetch_assoc(mysqli_query($conn,$sql));
-			var_dump($res);
+//			$res = mysqli_fetch_assoc(mysqli_query($conn,$sql));
+			$res = [];
+			if($row = mysqli_query($conn,$sql)){
+				while ($result = mysqli_fetch_assoc($row)){
+					$res[]=$result;
+				}
+			}
 			return $res;
 		}
 
@@ -35,13 +40,18 @@
 			$sql = "INSERT INTO ".$tablename." ( ".$columns." ) VALUES (".$values." )";
 			$conn = DB::connection();
 			mysqli_query($conn,$sql);
-			$res = DB::get('SELECT id FROM test ORDER BY id DESC LIMIT 1');
+			$res = DB::get("SELECT id FROM ".$tablename." ORDER BY id DESC LIMIT 1");
 			return $res[0][0];
 		}
 
 		public static function get($sql){
 			$conn = DB::connection();
-			$res = mysqli_fetch_all(mysqli_query($conn,$sql));;
+			$res =[];
+			if($row = mysqli_query($conn,$sql)){
+				while ($result = mysqli_fetch_assoc($row)){
+					$res[]=$result;
+				}
+			}
 			return $res;
 		}
 
