@@ -35,8 +35,8 @@
 			$num2 = 'num2';
 		}
 	?>
-	<input type="text" name="num1" placeholder="<?=$num1?>" autocomplete="off">
-	<input type="text" name="num2" placeholder="<?=$num2?>" autocomplete="off">
+	<input type="text" name="num1" placeholder="<?=$num1?>" value="<?=$num1?>" autocomplete="off">
+	<input type="text" name="num2" placeholder="<?=$num2?>" value="<?=$num2?>"autocomplete="off">
 	<input type="submit" value="+" name="operation1">
 	<input type="submit" value="-" name="operation1">
 	<input type="submit" value="/" name="operation1">
