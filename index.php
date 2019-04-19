@@ -33,8 +33,10 @@
 		<div class="gallery">
 			<?php
 				if(isset($_FILES['photo'])&&!empty($_FILES['photo'])){
-					$pics = ImageRedakt::save();
-					ImageRedakt::convert($pics,$_FILES['photo']['type']);
+					$img=[];
+					$img = $_FILES['photo'];
+					$pics = ImageRedakt::save($img);
+					ImageRedakt::convert($pics,$img);
 				}
 				$data = DB::getAll('pics','id');
 				foreach ($data as $key => $value){
