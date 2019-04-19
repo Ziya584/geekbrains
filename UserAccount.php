@@ -16,6 +16,10 @@
 						<h5 class="mt-0 mb-1"><?= $offer['title']; ?></h5>
 						<p><?= $offer['short_description']; ?></p>
 						<p>Цена: <?= $offer['price']; ?> р.</p>
+						<form action="korzinaAdd.php" method="POST">
+							<input type="hidden" name="offer_id" value="<?=$offer['id']?>">
+							<input type="submit" name="korzina" value="В корзину">
+						</form>
 					</div>
 				</a>
 			</li>
