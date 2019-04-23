@@ -35,8 +35,8 @@
 				if(isset($_FILES['photo'])&&!empty($_FILES['photo'])){
 					$img=[];
 					$img = $_FILES['photo'];
-					$pics = ImageRedakt::save($img);
-					ImageRedakt::convert($pics,$img);
+					$big_img = ImageRedakt::save($img);
+					ImageRedakt::convert($big_img,$img);
 				}
 				$data = DB::getAll('pics','id');
 				foreach ($data as $key => $value){

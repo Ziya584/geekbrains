@@ -1,8 +1,14 @@
 <?php
-$localhost = 'localhost';
-$user = 'root';
-$password = '';
-$dbname = 'geekbrains';
+	return [
+		'host' => 'localhost',
+		'name' => 'geekbrains',
+		'user' => 'root',
+		'password' => '',
+	];
+//$localhost = 'localhost';
+//$user = 'root';
+//$password = '';
+//$dbname = 'geekbrains';
 
 	define('HOST', "localhost");
 	define('USER', "root");
