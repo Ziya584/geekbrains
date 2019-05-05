@@ -13,67 +13,67 @@
 //7. *Написать функцию, которая вычисляет текущее время и возвращает его в формате с правильными склонениями, например:
 //22 часа 15 минут
 //21 час 43 минуты
-	echo " *************** TASK 1 *************** <br>";
+	 " *************** TASK 1 *************** <br>";
 	$a = 3;
 	$b = 5;
 
 	if ($a >= 0 && $b >= 0) {
-		echo $a - $b;
+		 $a - $b;
 	} elseif ($a < 0 && $b < 0) {
-		echo $a * $b;
+		 $a * $b;
 	} else {
-		echo $a + $b;
+		 $a + $b;
 	}
 
-	echo "<br> *************** TASK 2 *************** <br><br>";
+	 "<br> *************** TASK 2 *************** <br><br>";
 
 	$a = 7;
 	if ($a > 15) {
-		echo "a must be integer less than 16";
+		 "a must be integer less than 16";
 	} else {
 		switch ($a) {
 			case 1:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 2:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 3:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 4:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 5:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 6:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 7:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 8:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 9:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 10:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 11:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 12:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 13:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 14:
-				echo $a++ . " ";
+				 $a++ . " ";
 			case 15:
-				echo $a++ . " ";
+				 $a++ . " ";
 		}
 	}
 
-	echo "<br> *************** TASK 3 *************** <br><br>";
+	 "<br> *************** TASK 3 *************** <br><br>";
 
 	$x = 5;
 	$y = 2;
 //budet arifmeticheskoye deystviye pervoqo chisla ko vtoromu
-	echo sum($x, $y) . "<br>";
-	echo vichet($x, $y) . "<br>";
-	echo umnoj($x, $y) . "<br>";
-	echo del($x, $y) . "<br>";
+	 sum($x, $y) . "<br>";
+	 vichet($x, $y) . "<br>";
+	 umnoj($x, $y) . "<br>";
+	 del($x, $y) . "<br>";
 
 	function sum($x, $y)
 	{
@@ -98,37 +98,37 @@
 		return $x / $y;
 	}
 
-	echo "<br> *************** TASK 4 *************** <br><br>";
+	 "<br> *************** TASK 4 *************** <br><br>";
 // можем объединить задание 3 с четвёртым
-	echo mathOperation($x, $y, '+') . "<br>";
+	 mathOperation($x, $y, '+') . "<br>";
 
 	function mathOperation($arg1, $arg2, $operation)
 	{
 		switch ($operation) {
 			case '+':
-				echo sum($arg1, $arg2);
+				 return sum($arg1, $arg2);
 				break;
 			case '-':
-				echo vichet($arg1, $arg2);
+				return vichet($arg1, $arg2);
 				break;
 			case '*':
-				echo umnoj($arg1, $arg2);
+				return umnoj($arg1, $arg2);
 				break;
 			case '/':
-				echo del($arg1, $arg2);
+				return del($arg1, $arg2);
 				break;
 			default:
-				echo " Надо указать операцию над числами: + - * / ";
+				 " Надо указать операцию над числами: + - * / ";
 		}
 	}
 
-	echo "<br> *************** TASK 5 *************** <br><br>";
+	 "<br> *************** TASK 5 *************** <br><br>";
 
-	echo "<a href='../index.php' target='_blank'> Вот тут мы его уже выполнили </a> <br>";
+	 "<a href='../index.php' target='_blank'> Вот тут мы его уже выполнили </a> <br>";
 
-	echo "<br> *************** TASK 6 *************** <br><br>";
+	 "<br> *************** TASK 6 *************** <br><br>";
 
-	echo power(2, 3);
+	 power(2, 3);
 	function power($val, $pow)
 	{
 		if ($pow != 1) {
@@ -138,13 +138,12 @@
 		return $val;
 	}
 
-	echo "<br> *************** TASK 7 *************** <br><br>";
+	 "<br> *************** TASK 7 *************** <br><br>";
 
 	$currentTime = date('H:m:s');
 
 
-	echo tellMetime($currentTime);
-
+	 tellMetime($currentTime);
 
 	function tellMetime($currentTime)
 	{
@@ -210,6 +209,5 @@
 	}
 
 
-	// Со следующего урока коммитов будет больше для практики. Уже смог настроить.
 
 ?>

@@ -1,5 +1,5 @@
 <?php
-	include_once("ImageRedakt.php");
+	include_once("classes\ImageRedakt.php");
 
 ?>
 
@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<title>Homework</title>
+	<title>Галерея</title>
 </head>
 <body>
 <div class="container">
@@ -33,15 +33,16 @@
 		<div class="gallery">
 			<?php
 				if(isset($_FILES['photo'])&&!empty($_FILES['photo'])){
-					$pics = ImageRedakt::save();
-					ImageRedakt::convert($pics,$_FILES['photo']['type']);
+					$img=[];
+					$img = $_FILES['photo'];
+					$big_img = ImageRedakt::save($img);
+					ImageRedakt::convert($big_img,$img);
 				}
-
-				$res = scandir("pic/small/");
-				foreach ($res as $pic){
-					if(strlen($pic)<4){ continue;}
+				$data = DB::getAll('pics','id');
+				foreach ($data as $key => $value){
+					if(strlen($data[$key][1])<4){ continue;}
 					?>
-					<a href=<?="pic/big/".$pic;?> target='_blank'> <img src="<?="pic/small/".$pic;?>"</a>
+					<a href=<?=$data[$key][2]?> target='_blank'> <img src="<?=$data[$key][3];?>"</a>
 					<?php
 				}
 			?>
