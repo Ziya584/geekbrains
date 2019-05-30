@@ -26,10 +26,21 @@ return [
 		'controller' => 'main',
 		'action' => 'registration',
 	],
+	'gallery' => [
+		'controller' => 'main',
+		'action' => 'gallery',
+	],
+	'gallery/{id:\d+}' => [
+		'controller' => 'main',
+		'action' => 'gallery',
+	],
 	'offer/{id:\d+}' => [
 		'controller' => 'main',
 		'action' => 'offer',
 	],
+
+
+
 	// AdminController
 	'admin/login' => [
 		'controller' => 'admin',

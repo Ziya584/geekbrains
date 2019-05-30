@@ -51,4 +51,11 @@ class MainController extends Controller {
 		$this->view->render('Регистрация');
 	}
 
+	public function galleryAction(){
+		$vars =[
+			'list' => $this->model->imagesList()
+		];
+		$this->view->render('Галерея', $vars);
+	}
+
 }

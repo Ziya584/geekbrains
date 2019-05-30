@@ -7,7 +7,8 @@ return [
 		'contact',
 		'offer',
 		'auth',
-		'registration'
+		'registration',
+		'gallery'
 	],
 	'authorize' => [
 		//

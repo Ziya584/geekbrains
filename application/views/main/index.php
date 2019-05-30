@@ -29,7 +29,9 @@
 					</div>
 				<?php endforeach; ?>
 	</div>
-	<div class="row"><br><hr><br></div>
+	<div class="row">
+	<br><hr><br>
+	</div>
 <!--		</div>-->
 		<div class="row">
 				<div class="clearfix">

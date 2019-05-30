@@ -43,4 +43,10 @@ class Main extends Model {
 		return $this->db->row('SELECT * FROM offers ORDER BY id DESC LIMIT :start, :max', $params);
 	}
 
+	public function imagesList(){
+		return $this->db->row('SELECT * FROM images order by id desc');
+	}
+
+
+
 }
