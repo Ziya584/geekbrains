@@ -24,4 +24,8 @@
 			$this->view->render('Вход');
 
 		}
+
+		public function registrationAction(){
+			$this->view->render('Регистрация');
+		}
 	}

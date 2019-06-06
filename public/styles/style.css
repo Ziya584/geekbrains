@@ -1,4 +1,6 @@
-
+.bgc_black{
+	background-color: #000;
+}
 
 .offer_btn_more{
 	padding: 10px;
@@ -11,8 +13,4 @@
 .offer{
 	width: 18rem;
 	margin: 12px;
-}
-
-.content{
-	margin-top: 60px;
 }

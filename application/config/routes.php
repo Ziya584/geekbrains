@@ -75,6 +75,11 @@ return [
 	'user/index' =>[
 		'controller'=>'user',
 		'action'=>'index'
+	],
+
+	'user/registration' =>[
+		'controller'=>'user',
+		'action'=>'registration'
 	]
 
 

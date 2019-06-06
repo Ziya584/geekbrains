@@ -6,7 +6,7 @@ class View {
 
 	public $path;
 	public $route;
-	public $layout = 'default1';
+	public $layout = 'default';
 
 	public function __construct($route) {
 		$this->route = $route;

@@ -15,6 +15,7 @@
 </head>
 <body>
 <div class="container">
+	<hr>
 	<div class="row">
 		<nav class="navbar navbar-expand-lg navbar-light fixed-top " id="mainNav">
 			<div class="container">
@@ -44,7 +45,9 @@
 		</nav>
 	</div>
 	<div class="content">
-		<?= $title ?>
+
+		<?php echo $content; ?>
+		<hr>
 	</div>
 </div>
 <!-- Optional JavaScript -->

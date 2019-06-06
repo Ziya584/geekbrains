@@ -42,7 +42,6 @@
 		</div>
 	</div>
 </nav>
-<hr>
 <?php echo $content; ?>
 <hr>
 <footer>
