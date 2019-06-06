@@ -4,7 +4,7 @@ return [
 	'all' => [
 		'login',
 	],
-	'authorize' => [
+	'authorized' => [
 		//
 	],
 	'guest' => [

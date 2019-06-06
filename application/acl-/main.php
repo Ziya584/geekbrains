@@ -10,7 +10,7 @@ return [
 		'registration',
 		'gallery'
 	],
-	'authorize' => [
+	'authorized' => [
 		//
 	],
 	'guest' => [

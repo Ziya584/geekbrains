@@ -70,4 +70,12 @@ return [
 		'controller' => 'admin',
 		'action' => 'offers',
 	],
+
+	//USER
+	'user/index' =>[
+		'controller'=>'user',
+		'action'=>'index'
+	]
+
+
 ];
