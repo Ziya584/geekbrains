@@ -57,15 +57,11 @@ class Admin extends Model {
 		$this->db->query('UPDATE offers SET title = :title, description = :description, price = :price  WHERE id = :id', $params);
 	}
 
-	public function offerUploadImage($img, $id) {
+	public function offerUploadImage($img, $id)
+	{
 		$image = new ImageUploader();
-		$big_img_url = $image->save($img,$id);
-		($big_img_url)?$image->convert($big_img_url,$img, $id):$this->error="Ошибка загрузки изображения!";
-
-//		$img = new Imagick($path);
-//		$img->cropThumbnailImage(1080, 600);
-//		$img->setImageCompressionQuality(80);
-//		$img->writeImage('public/images/'.$id.'.jpg');
+		$big_img_url = $image->save($img, $id);
+		($big_img_url) ? $image->convert($big_img_url, $img, $id) : $this->error = "Ошибка загрузки изображения!";
 	}
 
 	public function isOfferExists($id) {

@@ -72,9 +72,13 @@ return [
 	],
 
 	//USER
-	'user/index' =>[
+	'user/profile' =>[
 		'controller'=>'user',
-		'action'=>'index'
+		'action'=>'profile'
+	],
+	'user/login' =>[
+		'controller'=>'user',
+		'action'=>'login'
 	],
 
 	'user/registration' =>[

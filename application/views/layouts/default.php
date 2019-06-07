@@ -33,10 +33,10 @@
 					<a class="nav-link" href="/contact">Обратная связь</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/auth">Авторизация</a>
+					<a class="nav-link" href="user/login">Авторизация</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/registration">Регистрация</a>
+					<a class="nav-link" href="user/registration">Регистрация</a>
 				</li>
 			</ul>
 		</div>

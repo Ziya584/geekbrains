@@ -9,6 +9,8 @@ use application\models\Admin;
 class MainController extends Controller {
 
 	public function indexAction() {
+
+
 		$pagination = new Pagination($this->route, $this->model->offersCount());
 		$vars = [
 			'pagination' => $pagination->get(),

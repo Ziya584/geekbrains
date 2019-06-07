@@ -9,6 +9,9 @@ class View {
 	public $layout = 'default';
 
 	public function __construct($route) {
+		if(isset($_SESSION['authed'])){
+			$this->changeLayout('authed');
+		}
 		$this->route = $route;
 		$this->path = $route['controller'].'/'.$route['action'];
 	}
@@ -44,6 +47,10 @@ class View {
 
 	public function location($url) {
 		exit(json_encode(['url' => $url]));
+	}
+
+	public function changeLayout($layout){
+		$this->layout=$layout;
 	}
 
 }	
