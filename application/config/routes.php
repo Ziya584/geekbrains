@@ -18,9 +18,13 @@ return [
 		'controller' => 'main',
 		'action' => 'contact',
 	],
-	'auth' => [
+	'login' => [
 		'controller' => 'main',
-		'action' => 'auth',
+		'action' => 'login',
+	],
+	'logout' => [
+		'controller' => 'main',
+		'action' => 'logout',
 	],
 	'registration' => [
 		'controller' => 'main',
@@ -80,10 +84,13 @@ return [
 		'controller'=>'user',
 		'action'=>'login'
 	],
-
 	'user/registration' =>[
 		'controller'=>'user',
 		'action'=>'registration'
+	],
+	'user/logout' =>[
+		'controller'=>'user',
+		'action'=>'logout'
 	]
 
 

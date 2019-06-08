@@ -33,7 +33,7 @@
 					<a class="nav-link" href="/contact">Обратная связь</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="user/logout">Выход</a>
+					<a class="nav-link" href="/logout">Выход</a>
 				</li>
 
 			</ul>

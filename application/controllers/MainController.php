@@ -9,8 +9,6 @@ use application\models\Admin;
 class MainController extends Controller {
 
 	public function indexAction() {
-
-
 		$pagination = new Pagination($this->route, $this->model->offersCount());
 		$vars = [
 			'pagination' => $pagination->get(),
@@ -45,12 +43,16 @@ class MainController extends Controller {
 		$this->view->render('Товар', $vars);
 	}
 
-	public function authAction() {
-		$this->view->render('Авторизация');
+	public function loginAction() {
+		$this->view->redirect('user/login');
+	}
+
+	public function logoutAction() {
+		$this->view->redirect('user/logout');
 	}
 
 	public function registrationAction() {
-		$this->view->render('Регистрация');
+		$this->view->redirect('user/registration');
 	}
 
 	public function galleryAction(){

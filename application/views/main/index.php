@@ -22,7 +22,7 @@
 						<a href="/offer/<?=$val['id']?>"><img src="public/images/big/<?=$val['id']?>.png" class="card-img-top" alt=""></a>
 						<div class="card-body">
 							<h5 class="card-title"><?php echo htmlspecialchars($val['title'], ENT_QUOTES); ?></h5>
-							<p class="card-text"><?php echo htmlspecialchars($val['description'], ENT_QUOTES); ?></p>
+							<p class="card-text"><?php echo htmlspecialchars($val['short_description'], ENT_QUOTES); ?></p>
 							<a href="#" class="btn btn-primary offer_btn_more">В корзину</a>
 							<a href="#" class="btn btn-primary offer_btn_more">Купить</a>
 						</div>

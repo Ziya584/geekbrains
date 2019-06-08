@@ -8,16 +8,14 @@
 	{
 		public function loginAction()
 		{
-
 			if (!empty($_POST)) {
 				$vars['id'] = $this->model->loginValidate($_POST);
 				if (empty($vars)) {
 					$this->view->message('error', $this->model->error);
 				}
 				$_SESSION['authed'] = $vars['id'];
-				setcookie('user_id','1');
-				$this->view->message('error', $vars['id']);
-//				$this->view->location('user/profile');
+				setcookie('user_id',$vars['id']);
+				$this->view->location('user/profile');
 			}
 			$this->view->render('Вход');
 		}
@@ -29,7 +27,7 @@
 		public function registrationAction()
 		{
 			if(isset($_SESSION['authed'])){
-				$this->view->redirect('');
+				$this->view->redirect('/');
 			}
 
 			if (!empty($_POST)) {
@@ -41,12 +39,17 @@
 						$_SESSION['authed'] = 1;
 						$this->view->location('about');
 					} else {
-						$this->view->message('error', "NOT OK");
+						$this->view->message('error', $this->model->error);
 					}
 				}
 			}
 
 			$this->view->render('Регистрация');
+		}
+
+		public function logoutAction(){
+			unset($_SESSION['authed']);
+			$this->view->redirect('user/login');
 		}
 
 
