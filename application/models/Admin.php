@@ -38,12 +38,12 @@ class Admin extends Model {
 
 	public function offerAdd($post) {
 		$params = [
-			'id' => '',
 			'title' => $post['title'],
-			'description' => $post['description'],
+			'short_description' => $post['description'],
+			'full_description' => $post['description'],
 			'price' => $post['price'],
 		];
-		$this->db->query('INSERT INTO offers VALUES (:id, :title, :description, :price)', $params);
+		$this->db->query('INSERT INTO offers SET title=:title, short_description=:short_description, full_description=:full_description, price=:price)', $params);
 		return $this->db->lastInsertId();
 	}
 
@@ -76,9 +76,10 @@ class Admin extends Model {
 			'id' => $id,
 		];
 		$this->db->query('DELETE FROM offers WHERE id = :id', $params);
-
-		unlink('public/images/big/'.$id.'.png');
-		unlink('public/images/small/'.$id.'.png');
+		if(file_exists('public/images/big/'.$id.'.png')&& file_exists('public/images/small/'.$id.'.png')) {
+			unlink('public/images/big/' . $id . '.png');
+			unlink('public/images/small/' . $id . '.png');
+		}
 		$this->message = "Товар удалён";
 	}
 

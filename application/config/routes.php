@@ -43,8 +43,6 @@ return [
 		'action' => 'offer',
 	],
 
-
-
 	// AdminController
 	'admin/login' => [
 		'controller' => 'admin',
@@ -92,6 +90,5 @@ return [
 		'controller'=>'user',
 		'action'=>'logout'
 	]
-
 
 ];

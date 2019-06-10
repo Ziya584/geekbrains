@@ -34,7 +34,7 @@ class AdminController extends Controller {
 			}
 			$id = $this->model->offerAdd($_POST);
 			if (!$id) {
-				$this->view->message('success', 'Ошибка обработки запроса');
+				$this->view->message('success', 'Ошибка обработки запроса'. $id);
 			}
 			$this->model->offerUploadImage($_FILES['img'], $id);
 			$this->view->message('success', 'Товар добавлен');

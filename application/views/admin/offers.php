@@ -21,7 +21,7 @@
 												<img src="../public/small/<?=$val['id']; ?>.png" class="mr-3" alt="...">
 												<div class="media-body">
 													<h5 class="mt-0"><?=$val['title']?></h5>
-													<p><?=$val['description']?></p><p><?=$val['price']?> руб.</p>
+													<p><?=$val['short_description']?></p><p><?=$val['price']?> руб.</p>
 												</div>
 											</div></td>
                                         <td><a href="/admin/edit/<?php echo $val['id']; ?>" class="btn btn-primary">Редактировать</a></td>

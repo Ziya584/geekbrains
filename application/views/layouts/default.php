@@ -11,6 +11,7 @@
 	<script src="/public/scripts/form.js"></script>
 	<script src="/public/scripts/popper.js"></script>
 	<script src="/public/scripts/bootstrap.js"></script>
+
 	<link href="/public/styles/main.css" rel="stylesheet">
 	<link href="/public/styles/default.css" rel="stylesheet">
 	<link rel="stylesheet" href="/public/styles/style.css" rel="stylesheet">
@@ -42,6 +43,9 @@
 		</div>
 	</div>
 </nav>
+<header class="masthead" style="background-color: rgba(0,0,0,0.8);">
+
+</header>
 <?php echo $content; ?>
 <hr>
 <footer>

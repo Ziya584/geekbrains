@@ -1,6 +1,3 @@
-<header class="masthead" style="background-color: rgba(38,38,38,0.55);">
-
-</header>
 <div class="card bg-light">
 	<article class="card-body mx-auto" style="max-width: 400px;">
 		<h4 class="card-title mt-3 text-center"><?=$title?></h4>
